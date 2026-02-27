@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chasse au Speedo | Cartel Event</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== GLOBAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: radial-gradient(circle at top, #1a0000, #000000 70%);
+    color: white;
+    overflow-x: hidden;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+/* ===== HEADER ===== */
+header {
+    padding: 40px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 45px;
+    color: crimson;
+    text-shadow: 0 0 20px red;
+}
+
+header h3 {
+    margin-top: 10px;
+    color: #ccc;
+}
+
+/* ===== SECTION ===== */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* ===== CARDS ===== */
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    width: 260px;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,0,0,0.3);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card h3 {
+    margin-top: 15px;
+}
+
+/* ===== REWARD BOX ===== */
+.reward-box {
+    display: inline-block;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 15px;
+    background: rgba(255,0,0,0.1);
+    border: 2px solid crimson;
+    font-size: 22px;
+}
+
+/* ===== BUTTON ===== */
+button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background: crimson;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: darkred;
+    transform: scale(1.05);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    padding: 40px;
+    text-align: center;
+    background: black;
+    border-top: 2px solid crimson;
+    margin-top: 50px;
+}
+
+/* ===== PDF MODE ===== */
+@media print {
+
+    body {
+        background: #000000 !important;
+    }
+
+    section {
+        page-break-inside: avoid;
+    }
+
+    .card {
+        background: #111 !important;
+        border: 1px solid crimson !important;
+    }
+
+    .reward-box {
+        background: #1a0000 !important;
+        border: 2px solid crimson !important;
+    }
+
+    button, #countdown, .modal {
+        display: none !important;
+    }
+}
+
+/* ===== MODAL REGLES ===== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #0d0000;
+    padding: 40px;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 15px;
+    border: 2px solid crimson;
+    box-shadow: 0 0 40px crimson;
+    text-align: center;
+    animation: popIn 0.4s ease;
+}
+
+.modal-content h2 {
+    color: crimson;
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+.close-btn {
+    margin-top: 25px;
+    padding: 12px 25px;
+    background: crimson;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    background: darkred;
+    transform: scale(1.05);
+}
+
+@keyframes popIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+/* ===== DARK CHAT ===== */
+.darkchat-box {
+    margin-top: 40px;
+    display: inline-block;
+    padding: 40px;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #0a0000, #140000);
+    border: 2px solid crimson;
+    box-shadow: 0 0 30px crimson;
+    max-width: 600px;
+}
+
+.darkchat-box h3 {
+    color: crimson;
+    font-size: 24px;
+}
+
+.dark-info {
+    margin-top: 25px;
+    padding: 20px;
+    background: rgba(255,0,0,0.1);
+    border: 1px solid crimson;
+    border-radius: 10px;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🚐 CHASSE AU SPEEDO 🚐</h1>
+    <h3>Cartel El Silention / Cartel Cayo</h3>
+    <h3>🤝 En collaboration avec La French Touch 🇫🇷</h3>
+</header>
+<section>
+    <h2>💬 Accès Dark Chat</h2>
+
+    <div class="darkchat-box">
+        <h3>🔒 Canal Officiel des Leads</h3>
+
+        <p style="margin-top:15px;">
+            ⚠ Tous les leads doivent obligatoirement rejoindre le Dark Chat.
+        </p>
+
+        <div class="dark-info">
+            <p><strong>Nom du canal :</strong>CESCARTEL</p>
+            <p><strong>Code d’accès :</strong> 78467</p>
+        </div>
+
+        <p style="margin-top:20px; font-size:14px; opacity:0.8;">
+            ❗ Toute équipe sans lead présent dans le canal sera disqualifiée.
+        </p>
+    </div>
+</section>
+<section>
+    <h2>🎙 Discours</h2>
+    <p style="margin-top:20px; max-width:700px; margin-left:auto; margin-right:auto;">
+        Une organisation clandestine a volé 4 Speedos.
+        Chaque Speedo contient des biens précieux du cartel.
+        Ils sont verrouillés.
+        Saurez-vous les retrouver avant les autres ?
+    </p>
+</section>
+
+<section>
+    <h2>👤 Donneurs d’Objets</h2>
+    <div class="card-container">
+        <div class="card">
+            <img src="dsf.png">
+            <h3>Joggeur</h3>
+        </div>
+        <div class="card">
+            <img src="joggeur.png">
+            <h3>SDF</h3>
+        </div>
+        <div class="card">
+            <img src="serrurier.png">
+            <h3>Serrurier</h3>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>🔑 Fonctionnement des Clés</h2>
+
+    <div class="card-container">
+        <div class="card">
+            <h3>🧍 Joggeur</h3>
+            <p>Remet un objet :</p>
+            <p><strong>Cigare</strong></p>
+        </div>
+
+        <div class="card">
+            <h3>🧍 SDF</h3>
+            <p>Remet le second objet :</p>
+            <p><strong>Clé de voiture</strong></p>
+        </div>
+
+        <div class="card">
+            <h3>🔐 Serrurier</h3>
+            <p>
+                Reçoit les deux objets<br><br>
+                ➜ Donne la clé d’un Speedo
+            </p>
+        </div>
+    </div>
+
+    <p style="margin-top:40px; font-size:18px;">
+        ⚠ Les deux objets sont obligatoires pour obtenir une clé.<br>
+        ⚠ Une seule clé par groupe.
+    </p>
+</section>
+
+<section>
+    <h2>🚐 Les Speedos</h2>
+    <div class="card-container">
+        <div class="card"><img src="speedo1.jpg"><h3>Speedo #1</h3></div>
+        <div class="card"><img src="speedo2.jpg"><h3>Speedo #2</h3></div>
+        <div class="card"><img src="speedo3.jpg"><h3>Speedo #3</h3></div>
+        <div class="card"><img src="speedo4.jpg"><h3>Speedo #4</h3></div>
+    </div>
+</section>
+
+<section>
+    <h2>🏆 Récompenses Officielles</h2>
+
+    <div class="reward-box">
+        🥇 1er Groupe<br><br>
+        💰 <strong>1 500 000$</strong>
+    </div>
+
+    <div class="reward-box">
+        🥈 2ème Groupe<br><br>
+        💰 <strong>500 000$</strong>
+    </div>
+</section>
+
+<section>
+    <h2>⏳ Lancement de l'événement</h2>
+    <div id="countdown"></div>
+    <button onclick="openModal()">📜 Voir les règles</button>
+</section>
+
+<footer>
+    © 2026 Cartel El Silention / Cartel Cayo  
+    <br>Collaboration officielle avec La French Touch 🇫🇷
+</footer>
+
+<!-- ===== POPUP REGLES ===== -->
+<div id="rulesModal" class="modal">
+    <div class="modal-content">
+        <h2>📜 RÈGLEMENT OFFICIEL</h2>
+        <p>
+            🚫 Aucune violence<br>
+            🚫 Aucune arme sortie<br>
+            🚫 Interdiction de tirer<br><br>
+
+            🔑 Objets obligatoires :<br>
+            • Cigare (Joggeur)<br>
+            • Clé de voiture (SDF)<br><br>
+
+            🔐 Le serrurier échange les deux objets contre une clé.<br><br>
+
+            ⚠ Une seule clé par groupe.<br>
+            ⚠ Non-respect = disqualification immédiate.
+        </p>
+
+        <button class="close-btn" onclick="closeModal()">FERMER</button>
+    </div>
+</div>
+
+<script>
+
+/* ===== COUNTDOWN ===== */
+const eventDate = new Date("March 5, 2026 20:00:00").getTime();
+
+const timer = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    document.getElementById("countdown").innerHTML =
+        days + "j " + hours + "h " + minutes + "m ";
+
+    if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "🔥 ÉVÉNEMENT EN COURS 🔥";
+    }
+}, 1000);
+
+/* ===== MODAL ===== */
+function openModal(){
+    document.getElementById("rulesModal").style.display = "flex";
+}
+
+function closeModal(){
+    document.getElementById("rulesModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+    const modal = document.getElementById("rulesModal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
+
+</script>
+
+</body>
+</html>
