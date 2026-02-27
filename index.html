@@ -337,7 +337,7 @@ footer {
 </section>
 
 <section>
-    <h2>⏳ Lancement de l'événement</h2>
+    <h2>⏳ Lancement de l'événement ( pas de date définie)</h2>
     <div id="countdown"></div>
     <button onclick="openModal()">📜 Voir les règles</button>
 </section>
@@ -372,43 +372,10 @@ footer {
 
 <script>
 
-/* ===== COUNTDOWN ===== */
-const eventDate = new Date("March 5, 2026 20:00:00").getTime();
 
-const timer = setInterval(function() {
-    const now = new Date().getTime();
-    const distance = eventDate - now;
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-    document.getElementById("countdown").innerHTML =
-        days + "j " + hours + "h " + minutes + "m ";
-
-    if (distance < 0) {
-        clearInterval(timer);
-        document.getElementById("countdown").innerHTML = "🔥 ÉVÉNEMENT EN COURS 🔥";
-    }
-}, 1000);
-
-/* ===== MODAL ===== */
-function openModal(){
-    document.getElementById("rulesModal").style.display = "flex";
-}
-
-function closeModal(){
-    document.getElementById("rulesModal").style.display = "none";
-}
-
-window.onclick = function(event) {
-    const modal = document.getElementById("rulesModal");
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-}
 
 </script>
 
 </body>
 </html>
+
