@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opération Red Phantom</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #0a0a0a;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Halo rouge animé */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255,0,0,0.15), transparent 70%);
+    animation: pulse 4s infinite alternate;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    from { opacity: 0.4; }
+    to { opacity: 0.9; }
+}
+
+/* HEADER */
+
+header {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.logo {
+    width: 150px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 15px red);
+}
+
+h1 {
+    font-size: 3em;
+    color: #ff0000;
+    text-shadow: 0 0 20px #ff0000;
+}
+
+.subtitle {
+    color: #aaa;
+}
+
+/* SECTIONS */
+
+.section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 50px 20px;
+    border-bottom: 1px solid rgba(255,0,0,0.2);
+}
+
+.section h2 {
+    color: #ff0000;
+    text-shadow: 0 0 10px #ff0000;
+}
+
+.card {
+    background: rgba(255, 0, 0, 0.05);
+    border: 1px solid rgba(255,0,0,0.3);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255,0,0,0.2);
+}
+
+/* IMAGES */
+
+.image-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 340px;
+    border-radius: 10px;
+    border: 2px solid rgba(255,0,0,0.4);
+    box-shadow: 0 0 20px rgba(255,0,0,0.5);
+    transition: 0.3s;
+}
+
+.image-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px red;
+}
+
+.rules {
+    color: #ff4d4d;
+}
+
+.reward {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: transparent;
+    border: 2px solid #ff0000;
+    color: #ff0000;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 0 10px #ff0000;
+}
+
+.button:hover {
+    background: #ff0000;
+    color: black;
+    box-shadow: 0 0 30px #ff0000;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #555;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <!-- LOGO -->
+    <img src="logo.png" alt="Logo du Groupe" class="logo">
+    <h1>⚡ OPÉRATION RED PHANTOM ⚡</h1>
+    <p class="subtitle">Event Officiel GTA RP – Récupération de Véhicules</p>
+</header>
+
+<div class="section">
+    <h2>🌆 Contexte</h2>
+    <div class="card">
+        <p>Deux individus viennent de sortir de prison.</p>
+        <p>Ils ont volé <strong>deux voitures de sport rouges de collection</strong>.</p>
+        <p>Ils tournent actuellement autour de la ville.</p>
+        <p class="rules">Ramenez-les intactes… ou disparaissez.</p>
+    </div>
+
+    <!-- IMAGE VILLE -->
+    <div class="image-container">
+        <img src="gta5.png" alt="Ville de nuit">
+    </div>
+</div>
+
+<div class="section">
+    <h2>🏎️ Les Véhicules</h2>
+    <div class="image-container">
+        <img src="car1.jpg" alt="Voiture Rouge 1">
+        <img src="car2.jpg" alt="Voiture Rouge 2">
+    </div>
+</div>
+
+<div class="section">
+    <h2>🔫 Règles</h2>
+    <div class="card">
+        <p>✅ Vous avez le droit de vous tirer dessus.</p>
+        <p>✅ Gunfight autorisé entre gangs.</p>
+        <p class="rules">❌ La voiture ne doit subir AUCUN dégât.</p>
+        <p class="rules">Si un tir touche la voiture → Disqualification immédiate.</p>
+    </div>
+</div>
+
+<div class="section">
+    <h2>🏆 Récompenses</h2>
+    <div class="card">
+        <p class="reward">🥇 1er gang : Grosse récompense</p>
+        <p class="reward">🥈 2ème gang : Récompense secondaire</p>
+    </div>
+
+    <a href="#" class="button">Participer à l'Event</a>
+</div>
+
+<footer>
+    © 2026 - Serveur GTA RP | Opération Red Phantom
+</footer>
+
+</body>
+</html>

@@ -230,7 +230,7 @@ footer {
 
 <header>
     <h1>🚐 CHASSE AU SPEEDO 🚐</h1>
-    <h3> Cartel Cayo</h3>
+    <h3>Cartel El Silention / Cartel Cayo</h3>
     <h3>🤝 En collaboration avec La French Touch 🇫🇷</h3>
 </header>
 <section>
@@ -337,13 +337,20 @@ footer {
 </section>
 
 <section>
-    <h2>⏳ Lancement de l'événement ( pas de date définie)</h2>
+    <h2>⏳ Lancement de l'événement</h2>
     <div id="countdown"></div>
     <button onclick="openModal()">📜 Voir les règles</button>
+
+    <p> en cours de création a ne pas prendre en compte merci </p>
+    <button onclick="window.location.href='index2.html'">➡️ event 2</button>
+        <button onclick="window.location.href='index3.html'">➡️ event 3</button>
+                <button onclick="window.location.href='index4.html'">➡️ event 4</button>
+
+
 </section>
 
 <footer>
-    © 2026 Cartel Cayo  
+    © 2026 Cartel El Silention / Cartel Cayo  
     <br>Collaboration officielle avec La French Touch 🇫🇷
 </footer>
 
@@ -372,8 +379,25 @@ footer {
 
 <script>
 
-/* ===== MODAL ===== */
 /* ===== COUNTDOWN ===== */
+const eventDate = new Date("March 5, 2026 20:00:00").getTime();
+
+const timer = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    document.getElementById("countdown").innerHTML =
+        days + "j " + hours + "h " + minutes + "m ";
+
+    if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "🔥 ÉVÉNEMENT EN COURS 🔥";
+    }
+}, 1000);
 
 /* ===== MODAL ===== */
 function openModal(){
@@ -395,9 +419,3 @@ window.onclick = function(event) {
 
 </body>
 </html>
-
-
-
-
-
-
