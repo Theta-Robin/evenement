@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Opération Silencio</title>
+
+<style>
+body {
+    margin: 0;
+    background: #0b0b0b;
+    font-family: 'Courier New', monospace;
+    color: #00ff88;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 30px;
+    background: black;
+    border-bottom: 3px solid darkred;
+}
+
+header h1 {
+    color: red;
+    font-size: 3em;
+    text-shadow: 0 0 20px red;
+}
+
+/* DOSSIER */
+.dossier {
+    width: 85%;
+    margin: 40px auto;
+    padding: 30px;
+    border: 2px solid red;
+    box-shadow: 0 0 30px red;
+    background: rgba(0,0,0,0.9);
+}
+
+.dossier-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+/* IMAGES */
+.target-photo {
+    width: 260px;
+    height: 300px;
+    object-fit: cover;
+    border: 3px solid red;
+    box-shadow: 0 0 20px red;
+}
+
+.images-row {
+    text-align: center;
+    margin: 40px auto;
+}
+
+.images-row img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    margin: 15px;
+    border: 2px solid red;
+    box-shadow: 0 0 15px red;
+    transition: 0.3s;
+}
+
+.images-row img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px red;
+}
+
+/* REWARD */
+.reward {
+    margin-top: 20px;
+    font-size: 1.4em;
+    color: gold;
+    text-shadow: 0 0 10px gold;
+}
+
+/* RULES */
+.rules {
+    width: 85%;
+    margin: 30px auto;
+    padding: 25px;
+    border: 2px solid yellow;
+    box-shadow: 0 0 20px yellow;
+    background: rgba(0,0,0,0.9);
+}
+
+.rules h2 {
+    color: yellow;
+    text-align: center;
+}
+
+.rules ul {
+    font-size: 1.1em;
+}
+
+/* BUTTON */
+.button-container {
+    text-align: center;
+    margin: 40px;
+}
+
+button {
+    background: darkred;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: black;
+    border: 2px solid red;
+    box-shadow: 0 0 20px red;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🌴 OPÉRATION SILENCIO 🌴</h1>
+</header>
+
+<div class="dossier">
+    <div class="dossier-content">
+
+        <!-- Photo du député -->
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a" class="target-photo">
+
+        <div>
+            Nom : <strong>Député Alejandro Cruz</strong><br><br>
+            Origine : Cayo Perico<br><br>
+            Arrivée prévue : Los Santos<br>
+            Escorte : 4 gardes armés (RP)<br><br>
+
+            Objectif : Intercepter son convoi et récupérer la mallette
+            contenant le projet de loi nuisible à vos intérêts.<br><br>
+
+            <div class="reward">
+                💰 Récompense totale : 800 000$
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="images-row">
+    <!-- Avion -->
+    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05" alt="Avion privé">
+
+    <!-- Cible -->
+</div>
+
+<div class="rules">
+    <h2>📜 RÈGLES DE LA MISSION</h2>
+    <ul>
+        <li>✔ Objectif principal : récupérer la mallette stratégique.</li>
+        <li>✔ Interception du convoi autorisée (RP).</li>
+        <li>⚠ Si la mission est propre et la cible maîtrisée : 100% récompense.</li>
+        <li>⚠ Si la mission tourne au chaos : 20% récompense.</li>
+        <li>❌ Si la mallette est perdue : aucune récompense.</li>
+        <li>🏆 Une seule équipe peut réclamer la prime.</li>
+    </ul>
+</div>
+
+<div class="button-container">
+    <button onclick="alert('Mission activée. Surveillance en cours à LSIA...')">
+        🚗 LANCER L’OPÉRATION
+    </button>
+</div>
+
+</body>
+</html>
